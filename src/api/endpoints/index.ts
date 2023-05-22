@@ -1,1 +1,1 @@
-export const fetchTodoListUrl = "todos";
+export const fetchTodoListUrl = "photos"; //changed from "todos" to "photos"

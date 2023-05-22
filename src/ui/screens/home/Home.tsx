@@ -2,6 +2,7 @@
 import {View, Text, FlatList} from "react-native";
 import React, {useEffect} from "react";
 import Spinner from "react-native-spinkit";
+import {Card} from "react-native-paper";
 
 //redux
 import {connect} from "react-redux";
@@ -40,11 +41,10 @@ const HomeScreen: React.FC = (props: any) => {
             data={todoList}
             renderItem={({item}) => {
               return (
-                <View>
-                  <Text>
-                    {item.id}. {item.title}
-                  </Text>
-                </View>
+                <Card style={{margin: 20}}>
+                  <Card.Title title={item.title} />
+                  <Card.Cover source={{uri: item.url}} />
+                </Card>
               );
             }}
             keyExtractor={item => item.id}
